@@ -32,27 +32,28 @@ public class MyMain {
 public static void main(String[] args) {
     String pathname="resources/sample.txt";
     File file=new File(pathname);
+
     FileReader fileReader=null;
     try {
-        fileReader=new FileReader(file);
+        fileReader =new FileReader(file);
         int data=0;
-        while (data!=-1)
+        while(data!=-1)
         {
             data=fileReader.read();
             char charater=(char)data;
-            Thread.sleep(100);
+            Thread.sleep(500);
             System.out.print(charater);
         }
         fileReader.close();
     }catch (FileNotFoundException e)
     {
-        System.out.println("File not found");
+        System.out.println("File Not Found Exception");
     }catch (IOException e)
     {
         System.out.println("IO Exception");
     }catch (InterruptedException e)
     {
-        System.out.println("Intrupt Exception");
+        System.out.println("Intrupted Exception");
     }
 }
 }
